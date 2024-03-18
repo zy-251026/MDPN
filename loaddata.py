@@ -116,6 +116,40 @@ def loaddata(name, batchsize):
         n_channels = 1
         n_classes = 10
         img_size = 28
+    elif name == 'emnistd':
+        train_loader = torch.utils.data.DataLoader(
+        torchvision.datasets.EMNIST('dataset', split = 'digits', train=True, download=True, 
+                       transform=torchvision.transforms.Compose([
+                           torchvision.transforms.ToTensor()
+                       ])),
+        batch_size=batchsize, shuffle=True)
+        sets = torchvision.datasets.EMNIST('dataset',split = 'digits', train=False, download=True, 
+                       transform=torchvision.transforms.Compose([
+                           torchvision.transforms.ToTensor()
+                       ]))
+        val_set, test_set = torch.utils.data.random_split(sets, [10000, 30000])
+        val_loader = torch.utils.data.DataLoader(dataset = val_set, batch_size=batchsize, shuffle=True)
+        test_loader = torch.utils.data.DataLoader(dataset = test_set, batch_size=batchsize, shuffle=True)
+        n_channels = 1
+        n_classes = 10
+        img_size = 28
+    elif name == 'emnistl':
+        train_loader = torch.utils.data.DataLoader(
+        torchvision.datasets.EMNIST('dataset', split = 'letters', train=True, download=True, 
+                       transform=torchvision.transforms.Compose([
+                           torchvision.transforms.ToTensor()
+                       ])),
+        batch_size=batchsize, shuffle=True)
+        sets = torchvision.datasets.EMNIST('dataset',split = 'letters', train=False, download=True, 
+                       transform=torchvision.transforms.Compose([
+                           torchvision.transforms.ToTensor()
+                       ]))
+        val_set, test_set = torch.utils.data.random_split(sets, [7000, 13800])
+        val_loader = torch.utils.data.DataLoader(dataset = val_set, batch_size=batchsize, shuffle=True)
+        test_loader = torch.utils.data.DataLoader(dataset = test_set, batch_size=batchsize, shuffle=True)
+        n_channels = 1
+        n_classes = 52
+        img_size = 28
     elif name == 'fer2013':
         sets = torchvision.datasets.FER2013('dataset', split = 'train', 
                        transform=torchvision.transforms.Compose([
