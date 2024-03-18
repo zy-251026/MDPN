@@ -9,14 +9,14 @@ from fit2 import fit2_model
 from model.model_tnns import tnn_Model
 from model.model_tnns3 import tnn3_Model
 from loaddata import loaddata
-# from model.AlexNet import AlexNet
-# from model.ResNet152 import resnet152
-# from model.dd import ddNet
-# from model.bls import blsNet
-# from model.DSAN import DSAN
-# from model.model_mdnm import MDNM_Model
-# from model.bilstm import BiLSTM, SpatialAttention, SpectralAttention
-# from model.discriminator import Discriminator
+from model.AlexNet import AlexNet
+from model.ResNet152 import resnet152
+from model.dd import ddNet
+from model.bls import blsNet
+from model.DSAN import DSAN
+from model.model_mdnm import MDNM_Model
+from model.bilstm import BiLSTM, SpatialAttention, SpectralAttention
+from model.discriminator import Discriminator
 import medmnist
 import argparse
 from model.tlr import CifarNet
