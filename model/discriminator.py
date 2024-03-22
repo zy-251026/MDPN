@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from morph_layers2D_torch import *
+from model.morph_layers2D_torch import *
 
 class Discriminator(nn.Module):
     
