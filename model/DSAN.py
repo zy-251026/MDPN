@@ -1,6 +1,6 @@
 import torch
 import torch.nn as nn
-import ResNet
+import model.ResNet
 
 class DSAN(nn.Module):
 
