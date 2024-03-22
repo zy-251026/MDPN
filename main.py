@@ -6,8 +6,8 @@ import time
 import torchvision
 import resnext
 from fit2 import fit2_model
-from model.model_tnns import tnn_Model
-from model.model_tnns3 import tnn3_Model
+from mdpn_model import mdpn_Model
+from mdpn3_model import mdpn3_Model
 from loaddata import loaddata
 from model.AlexNet import AlexNet
 from model.ResNet152 import resnet152
@@ -91,9 +91,9 @@ for runtime in range(5):
     print('Model:'+model_name[model_num]+'  runtime:'+str(runtime))
     if model_num == 0:
         if channel==1:
-            model = tnn_Model(50, classes, img_size).to(device)
+            model = mdpn_Model(50, classes, img_size).to(device)
         else:
-            model = tnn3_Model(50, classes, img_size).to(device)
+            model = mdpn3_Model(50, classes, img_size).to(device)
     if model_num == 1:
         model = AlexNet(classes, channel, img_size)
     elif model_num == 2:
