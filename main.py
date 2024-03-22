@@ -6,8 +6,8 @@ import time
 import torchvision
 import resnext
 from fit2 import fit2_model
-from mdpn_model import mdpn_Model
-from mdpn3_model import mdpn3_Model
+from model_mdpn import mdpn_Model
+from model_mdpn3 import mdpn3_Model
 from loaddata import loaddata
 from model.AlexNet import AlexNet
 from model.ResNet152 import resnet152
