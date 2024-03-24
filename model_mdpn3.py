@@ -35,18 +35,6 @@ class Soma(nn.Module):
         super(Soma, self).__init__()
         self.mp = nn.MaxPool3d((4, 4, 1))
     def forward(self, x):
-        fig = plt.figure()
-        min2 = torch.clone(torch.min(x[0,:,:,:,0]))
-        max2 = torch.clone(torch.max(x[0,:,:,:,0]))
-        xx1 = torch.ceil(torch.mul(torch.div(x[0,:,:,:,0] - min2, max2 - min2),255).view(3,24,24))
-        xxx1 = xx1[0,:,:].view(24,24)
-        xxx2 = xx1[1,:,:].view(24,24)
-        xxx3 = xx1[2,:,:].view(24,24)
-        xx1 = torch.stack((xxx1,xxx2,xxx3),2)
-        image1 = xx1.detach().numpy()
-        # print(image1)
-        plt.imshow(image1.astype(numpy.uint8), vmin=0, vmax=255)
-        plt.show()
         x = self.mp(x)
         return x
 
