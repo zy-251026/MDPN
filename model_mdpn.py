@@ -34,17 +34,17 @@ class Soma(nn.Module):
         super(Soma, self).__init__()
         self.mp = nn.MaxPool3d((4, 4, 1))
     def forward(self, x):
-        path = os.getcwd()
-        t = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-        path2 = path + '/' + t + '1.csv'
-        xx = torch.clone(x[0, :, :, 0].cpu())
-        xx = pandas.DataFrame(xx.detach().numpy())
-        xx.to_csv(path2, header=False, index=False)
-        path3 = path + '/' + t + '2.csv'
+        #path = os.getcwd()
+        #t = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        #path2 = path + '/' + t + '1.csv'
+        #xx = torch.clone(x[0, :, :, 0].cpu())
+        #xx = pandas.DataFrame(xx.detach().numpy())
+        #xx.to_csv(path2, header=False, index=False)
+        #path3 = path + '/' + t + '2.csv'
         x = self.mp(x)
-        xxx = torch.clone(x[0,:,:,0].cpu())
-        xxx = pandas.DataFrame(xxx.detach().numpy())
-        xxx.to_csv(path3, header=False, index=False)
+        #xxx = torch.clone(x[0,:,:,0].cpu())
+        #xxx = pandas.DataFrame(xxx.detach().numpy())
+        #xxx.to_csv(path3, header=False, index=False)
         return x
 
 
