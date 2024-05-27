@@ -145,21 +145,3 @@ for runtime in range(5):
     # input_shape = (-1, 3 * 32 * 32)
     # input_shape = (-1,28)
     training_loss, training_accuracy, validation_loss, validation_accuracy = fit2_model(model, loss_func, optimizer, input_shape, num_epochs, train_loader, val_loader, test_loader, args.model_num, args.data_num, runtime, device)
-    # training_loss, training_accuracy, validation_loss, validation_accuracy = fit_singlemodel(model, loss_func, optimizer, input_shape, num_epochs, train_loader, test_loader, ii)
-
-    # plt.plot(range(num_epochs), training_loss, 'b-', label='Training Loss')
-# plt.plot(range(num_epochs), validation_loss, 'g-', label='Validation Loss')
-# plt.title('Training and Validation loss')
-# plt.xlabel('Number of epochs')
-# plt.ylabel('Loss')
-# plt.legend()
-# plt.show()
-#
-#
-# plt.plot(range(num_epochs), training_accuracy, 'b-', label='Training Accuracy')
-# plt.plot(range(num_epochs), validation_accuracy, 'g-', label='Validation Accuracy')
-# plt.title('Training and Validation accuracy')
-# plt.xlabel('Number of epochs')
-# plt.ylabel('Accuracy')
-# plt.legend()
-# plt.show()2
