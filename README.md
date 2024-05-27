@@ -8,3 +8,6 @@ MDPN is a lightweight neural network architecture that simulates the dendritic s
 ## Architecture
 ![111](architecture/mechanism.gif)
 ## Running case
+```
+python main.py --model 0 --data_num 0 --lr 0.001 --epochs 50 --batch_size 64 --device 'cuda:0'
+```
