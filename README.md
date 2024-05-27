@@ -11,3 +11,19 @@ MDPN is a lightweight neural network architecture that simulates the dendritic s
 ```
 python main.py --model 0 --data_num 0 --lr 0.001 --epochs 50 --batch_size 64 --device 'cuda:0'
 ```
+## Related Projects
+Our code is based on [PyTorch](https://github.com/pytorch/pytorch)
+
+## Citation
+```
+@article{zhang2024dendritic,
+  author={Zhang, Yu and Cai, Pengxing and Sun, Yanan and Zhang, Zhiming and Lei, Zhenyu and Gao, Shangce},
+  journal={IEEE Transactions on Artificial Intelligence}, 
+  title={A Lightweight Multi-Dendritic Pyramidal Neuron Model with Neural Plasticity on Image Recognition}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={1-13},
+  doi={10.1109/TAI.2024.3379968}
+}
+```
