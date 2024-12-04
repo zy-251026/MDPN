@@ -23,7 +23,7 @@ Our code is based on [PyTorch](https://github.com/pytorch/pytorch)
   year={2024},
   volume={5},
   number={9},
-  pages={1-13},
+  pages={4415-4427},
   doi={10.1109/TAI.2024.3379968}
 }
 ```
