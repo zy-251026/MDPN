@@ -49,9 +49,7 @@ class Dendrite(nn.Module):
         x = x.view(batch_size,3,img_size-side+1,img_size-side+1,1,side,side)
         x = x.repeat((1,1,1,1,num,1,1))
         y = (torch.pi + 2*torch.atan(torch.mul(10, (torch.mul(x, self.params['w']) - self.params['q'])))) / (2 * torch.pi)
-        #y = torch.log(torch.prod(y+0.6, 6))
-        #y = torch.sum(y,5)
-        y = torch.sum(y,6)
+        y = torch.log(torch.prod(y+0.6, 6))
         y = torch.sum(y,5)
         return y
 
