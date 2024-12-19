@@ -54,15 +54,7 @@ class Dendrite(nn.Module):
         x = x.unfold(3,side,1)
         x = x.view(batch_size,3,img_size-side+1,img_size-side+1,1,side,side)
         x = x.repeat((1,1,1,1,num,1,1))
-        w = self.params['w']
-        q = self.params['q']
-        w = w[:, :, :, :, 4, :].view(3,1,1,num,5,1)
-        q = q[:, :, :, :, 4, :].view(3,1,1,num,5,1)
-        print(w.shape, q.shape)
         y = (torch.pi + 2*torch.atan(torch.mul(10, (torch.mul(x, self.params['w']) - self.params['q'])))) / (2 * torch.pi)
-        # print(yy.shape)
-        # print(yy.shape)
-        # y = torch.sum(y,6)
         y = torch.log(torch.prod(y+0.6, 6))
         y = torch.sum(y,5)
         return y
@@ -71,8 +63,8 @@ class Dendrite(nn.Module):
 class mdpn3_Model(nn.Module):
     def __init__(self, m, classes, imgsize):
         super(mdpn3_Model, self).__init__()
-        self.weight = torch.rand(3, 1, 1, m, 1, 1)
-        self.theta = torch.rand(3, 1, 1, m, 1, 1)
+        self.weight = torch.rand(3, 1, 1, m, 5, 5)
+        self.theta = torch.rand(3, 1, 1, m, 5, 5)
         self.imgsize = int((imgsize - 4) / 4)
         self.model = nn.Sequential(
             Dendrite(self.weight, self.theta),
